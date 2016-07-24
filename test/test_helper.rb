@@ -18,5 +18,6 @@ class ActionDispatch::IntegrationTest
 
   def teardown
     reset_session!
+    super
   end
 end
