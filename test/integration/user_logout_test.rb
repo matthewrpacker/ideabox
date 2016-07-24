@@ -1,4 +1,4 @@
-require "test_helper"
+require_relative "../test_helper"
 
 class UserLogoutTest < ActionDispatch::IntegrationTest
   def test_logged_in_user_can_log_out

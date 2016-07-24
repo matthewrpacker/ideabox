@@ -1,4 +1,4 @@
-require "test_helper"
+require_relative "../test_helper"
 
 class UserLoginTest < ActionDispatch::IntegrationTest
   def test_registered_user_can_login
@@ -9,6 +9,18 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     fill_in "Username", with: "david"
     fill_in "Password", with: "password"
     click_button "Login"
+
+    #CLASS NOTES
+    #visit login_path
+    #fill_in 'session[name]', with: 'carmer'
+    #fill_in 'session[password]', with: 'password'
+
+    #click_on 'login'
+
+    #assert_equal user_path(user), current_path
+
+    #within("#greeting") do
+      #assert page.has_content?("Welcome, carmer!")
 
     assert page.has_content?("Welcome, david")
   end

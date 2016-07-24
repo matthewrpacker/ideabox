@@ -1,4 +1,4 @@
-require "test_helper"
+require_relative "../test_helper"
 
 class UserCreationTest < ActionDispatch::IntegrationTest
   test "a user can be created" do
