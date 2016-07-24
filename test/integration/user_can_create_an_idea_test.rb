@@ -12,8 +12,6 @@ class UserCanCreateAnIdeaTest < ActionDispatch::IntegrationTest
     fill_in "Description", with: "App finds next available tee time based on location"
     click_on "Create Idea"
 
-    assert_equal current_path, user_idea_path(user, Idea.last)
     assert page.has_content?("Golf App")
-    assert page.has_content?("available")
   end
 end

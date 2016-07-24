@@ -11,7 +11,7 @@ class UserCannotEditIdeaForOtherUserTest < ActionDispatch::IntegrationTest
     ApplicationController.any_instance.stubs(:current_user).returns(user1)
 
     visit edit_user_idea_path(user2, idea2)
-    assert page.has_content?("Welcome, matt")
+    assert page.has_content?("Login")
     refute page.has_content?("dave")
   end
 end

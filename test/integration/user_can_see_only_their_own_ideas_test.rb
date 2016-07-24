@@ -13,5 +13,10 @@ class UserCanSeeOnlyTheirOwnIdeasTest < ActionDispatch::IntegrationTest
     visit user_ideas_path(user1)
     assert page.has_content?("Ski")
     refute page.has_content?("Golf")
+
+    visit user_ideas_path(user2)
+
+    assert page.has_content?("matthew")
+    refute page.has_content?("david")
   end
 end

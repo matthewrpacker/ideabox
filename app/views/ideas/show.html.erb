@@ -1,2 +1,5 @@
 <h3><%= @idea.name  %></h3>
 Description: <%= @idea.description %><br>
+
+<%= link_to "Edit", edit_user_idea_path(current_user, @idea.id) %> &nbsp;
+<%= link_to "Delete", user_idea_path(current_user, @idea.id), method: :delete %><br><br>
