@@ -38,7 +38,7 @@ class IdeasController < ApplicationController
   def update
     @idea = Idea.find(params[:id])
     if @idea.update_attributes(idea_params)
-      redirect_to user_ideas_path(current_user)
+      redirect_to user_idea_path(current_user, @idea.id)
     else
       render :edit
     end
