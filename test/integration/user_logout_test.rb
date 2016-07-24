@@ -1,4 +1,4 @@
-require_relative "../test_helper"
+require "test_helper"
 
 class UserLogoutTest < ActionDispatch::IntegrationTest
   def test_logged_in_user_can_log_out
@@ -14,6 +14,7 @@ class UserLogoutTest < ActionDispatch::IntegrationTest
 
     click_link "Logout"
 
+    assert current_path, login_path
     refute page.has_content?("Welcome, william")
   end
 end

@@ -11,6 +11,4 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
-  #make user directory in controller directory with base controller file with
 end

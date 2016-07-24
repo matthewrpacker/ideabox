@@ -1,4 +1,4 @@
-require_relative "../test_helper"
+require "test_helper"
 
 class UserCreationTest < ActionDispatch::IntegrationTest
   test "a user can be created" do
@@ -8,6 +8,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
     click_on "Create Account"
 
+    assert current_path, user_path(User.first)
     assert page.has_content?("Welcome, matthew")
   end
 end

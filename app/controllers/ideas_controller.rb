@@ -1,5 +1,9 @@
 class IdeasController < ApplicationController
 
+  def index
+    @ideas = Idea.all
+  end
+
   def new
     @idea = Idea.new
   end
@@ -19,6 +23,19 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
+  end
+
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+    @idea = Idea.find(params[:id])
+    if @idea.update_attributes(idea_params)
+      redirect_to user_ideas_path(current_user, @idea)
+    else
+      render :edit
+    end
   end
 
   private

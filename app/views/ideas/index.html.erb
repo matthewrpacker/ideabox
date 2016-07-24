@@ -1,0 +1,6 @@
+<% current_user.ideas.each do |idea| %>
+  <%= link_to idea.name, user_idea_path(current_user, idea.id) %>
+  <br><br>
+<% end %>
+<br>
+<%= link_to "Create New Idea", new_user_idea_path(current_user) %>

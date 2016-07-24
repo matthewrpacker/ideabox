@@ -1,4 +1,4 @@
-require_relative "../test_helper"
+require "test_helper"
 
 class UserLoginTest < ActionDispatch::IntegrationTest
   def test_registered_user_can_login
@@ -9,18 +9,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     fill_in "Username", with: "david"
     fill_in "Password", with: "password"
     click_button "Login"
-
-    #CLASS NOTES
-    #visit login_path
-    #fill_in 'session[name]', with: 'carmer'
-    #fill_in 'session[password]', with: 'password'
-
-    #click_on 'login'
-
-    #assert_equal user_path(user), current_path
-
-    #within("#greeting") do
-      #assert page.has_content?("Welcome, carmer!")
 
     assert page.has_content?("Welcome, david")
   end
@@ -49,7 +37,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
   def test_registered_user_cannot_view_welcome_page_of_different_user
     user1 = User.create(username: "matthew", password: "password")
-
     user2 = User.create(username: "david", password: "password")
 
     ApplicationController.any_instance.stubs(:current_user).returns(user1)
@@ -60,5 +47,4 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Not authorized")
     end
   end
-
 end
