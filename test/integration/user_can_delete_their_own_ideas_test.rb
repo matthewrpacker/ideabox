@@ -15,7 +15,7 @@ class UserCanDeleteTheirOwnIdeasTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Golf App")
 
-    click_link "Delete"
+    click_on "Delete"
 
     assert current_path, user_ideas_path(user)
     refute page.has_content?("Golf App")

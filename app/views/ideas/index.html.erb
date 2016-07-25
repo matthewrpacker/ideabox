@@ -3,4 +3,5 @@
   <br><br>
 <% end %>
 <br>
-<%= link_to "Create New Idea", new_user_idea_path(current_user) %>
+
+  <%= button_to "Create Idea", new_user_idea_path(current_user), class: "btn btn-primary btn-sm", method: :get%>

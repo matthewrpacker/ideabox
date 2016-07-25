@@ -1,2 +1,2 @@
 <%= render partial: "form" %>
-<%= link_to "Cancel", user_ideas_path(current_user) %>
+<%= button_to "Cancel", user_ideas_path(current_user), class: "btn btn-primary btn-sm", method: :get %>
