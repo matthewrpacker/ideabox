@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
     @user = User.find(params[:user_id])
     if @idea.save
       @idea.update(user_id: @user.id)
-      flash[:notice] = "Idea Created!!!!"
+      flash[:notice] = 'Idea Created!'
       redirect_to user_ideas_path(current_user)
     else
       flash.now[:error] = @idea.errors.full_messages.join(", ")
