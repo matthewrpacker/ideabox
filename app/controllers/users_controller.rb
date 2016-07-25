@@ -16,8 +16,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.nil? || current_user != user_path
-      redirect_to new_user_path, alert: "Not authorized"
+    if current_user != user_path
+      redirect_to new_user_path, alert: "Unauthorized"
     end
   end
 

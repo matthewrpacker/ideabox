@@ -1,9 +1,9 @@
 <%= form_for [current_user, @idea] do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %>&nbsp
 
   <%= f.label :description %>
-  <%= f.text_field :description %> &nbsp
+  <%= f.text_field :description %> &nbsp &nbsp
 
   <%= f.submit class: "btn btn-success btn-sm", method: :post %>
 

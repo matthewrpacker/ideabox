@@ -9,7 +9,7 @@ class UnregisteredUserCannotViewWelcomePageOfDifferentUserTest < ActionDispatch:
     visit user_path(user)
 
     within(".flash_alert") do
-      assert page.has_content?("Not authorized")
+      assert page.has_content?("Unauthorized")
     end
   end
 end
